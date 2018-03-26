@@ -12,7 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>README</itemPath>
+      <itemPath>README.md</itemPath>
       <itemPath>server.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -55,7 +55,7 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="README" ex="false" tool="3" flavor2="0">
+      <item path="README.md" ex="false" tool="3" flavor2="0">
       </item>
       <item path="server.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -75,7 +75,7 @@
           </incDir>
         </ccTool>
       </compileType>
-      <item path="README" ex="false" tool="3" flavor2="0">
+      <item path="README.md" ex="false" tool="3" flavor2="0">
       </item>
       <item path="server.cpp" ex="false" tool="1" flavor2="0">
       </item>
