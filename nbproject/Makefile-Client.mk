@@ -15,14 +15,14 @@ NM=nm
 CCADMIN=CCadmin
 RANLIB=ranlib
 CC=gcc
-CCC=c++
-CXX=c++
+CCC=g++
+CXX=g++
 FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GCC-Windows
-CND_DLIB_EXT=dll
+CND_PLATFORM=GNU-Linux
+CND_DLIB_EXT=so
 CND_CONF=Client
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/server.o
+	${OBJECTDIR}/client.o
 
 
 # C Compiler Flags
@@ -52,20 +52,20 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-lmicrohttpd `pkg-config --libs jsoncpp` `pkg-config --libs libjsonrpccpp-common` `pkg-config --libs libcurl` `pkg-config --libs libjsonrpccpp-client`  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ex7.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/sqliteclient
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ex7.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/sqliteclient: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ex7 ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/sqliteclient ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/server.o: server.cpp
+${OBJECTDIR}/client.o: client.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Ivendor/jsonrpc-lean/include -Ivendor/rapidjson/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/server.o server.cpp
+	$(COMPILE.cc) -g -Ivendor/jsonrpc-lean/include -Ivendor/rapidjson/include `pkg-config --cflags jsoncpp` `pkg-config --cflags libjsonrpccpp-common` `pkg-config --cflags libcurl` `pkg-config --cflags libjsonrpccpp-client` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/client.o client.cpp
 
 # Subprojects
 .build-subprojects:

@@ -15,13 +15,13 @@ CND_PACKAGE_DIR_Server=dist/Server/GNU-Linux/package
 CND_PACKAGE_NAME_Server=ex7.tar
 CND_PACKAGE_PATH_Server=dist/Server/GNU-Linux/package/ex7.tar
 # Client configuration
-CND_PLATFORM_Client=GCC-Windows
-CND_ARTIFACT_DIR_Client=dist/Client/GCC-Windows
-CND_ARTIFACT_NAME_Client=ex7
-CND_ARTIFACT_PATH_Client=dist/Client/GCC-Windows/ex7
-CND_PACKAGE_DIR_Client=dist/Client/GCC-Windows/package
+CND_PLATFORM_Client=GNU-Linux
+CND_ARTIFACT_DIR_Client=dist/Client/GNU-Linux
+CND_ARTIFACT_NAME_Client=sqliteclient
+CND_ARTIFACT_PATH_Client=dist/Client/GNU-Linux/sqliteclient
+CND_PACKAGE_DIR_Client=dist/Client/GNU-Linux/package
 CND_PACKAGE_NAME_Client=ex7.tar
-CND_PACKAGE_PATH_Client=dist/Client/GCC-Windows/package/ex7.tar
+CND_PACKAGE_PATH_Client=dist/Client/GNU-Linux/package/ex7.tar
 #
 # include compiler specific variables
 #

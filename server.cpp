@@ -47,7 +47,6 @@ string MyStubServer::ping() {
     return "pong";
 }
 
-
 int main(int argc, char **argv) {
     if (argc != 2) {
         cout << "Please supply path to an SQLite3 database file" << endl;
@@ -65,7 +64,5 @@ int main(int argc, char **argv) {
     MyStubServer s(httpserver);
     s.StartListening();
 
-    while(1) {
-        true;
-    }
+    while(1) {} //Listen forever
 }
